@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#07111f">
+<title>Subway Web Arcade - Game</title>
+<link rel="stylesheet" href="assets/css/game.css">
+</head>
+<body>
+<div id="gameRoot">
+  <canvas id="gameCanvas"></canvas>
+  <div class="hud">
+    <div class="hud-left">
+      <div class="hud-chip">SCORE <b id="score">0</b></div>
+      <div class="hud-chip">BEST <b id="best">0</b></div>
+      <div class="hud-chip">×<b id="multiplier">1</b></div>
+    </div>
+    <button id="pauseBtn" class="hud-btn">Ⅱ</button>
+  </div>
+  <div id="countdown" class="countdown hidden"></div>
+  <div id="pauseOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <span class="eyebrow">PAUSED</span><h1>遊戲暫停</h1>
+      <button id="resumeBtn" class="primary">繼續</button>
+      <button id="restartBtn" class="secondary">重新開始</button>
+      <button id="backBtn" class="ghost">返回選單</button>
+    </div>
+  </div>
+  <div id="gameOver" class="overlay hidden">
+    <div class="overlay-card">
+      <span class="eyebrow">RUN OVER</span><h1>跑完了！</h1>
+      <div class="final-score"><small>SCORE</small><b id="finalScore">0</b></div>
+      <p id="newBest" class="new-best hidden">🏆 新紀錄！</p>
+      <button id="againBtn" class="primary">再跑一次</button>
+      <button id="gameBackBtn" class="ghost">返回選單</button>
+    </div>
+  </div>
+  <div id="touchControls" class="touch-controls">
+    <button data-touch="left">←</button>
+    <button data-touch="jump">↑</button>
+    <button data-touch="slide">↓</button>
+    <button data-touch="right">→</button>
+  </div>
+</div>
+<script type="module" src="assets/js/game.js"></script>
+</body>
+</html>

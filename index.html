@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Subway Web Arcade</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span>🚇</span> SUBWAY WEB</a>
+  <nav>
+    <button data-page="home">首頁</button>
+    <button data-page="games">遊戲</button>
+    <button data-page="settings">控制設定</button>
+    <button data-page="about">說明</button>
+  </nav>
+  <button id="mobileMenu" class="icon-btn">☰</button>
+</header>
+
+<main>
+  <section id="page-home" class="page active">
+    <div class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">WEB ARCADE • GAMEPAD READY</span>
+        <h1>跑進地鐵，<br><span>一路向前。</span></h1>
+        <p>一個可直接部署到 GitHub Pages 的原創無限跑酷遊戲網站。支援鍵盤、Xbox / 相容 Gamepad、按鍵重綁與本機最高分。</p>
+        <div class="hero-actions">
+          <button class="primary" data-page="games">開始遊玩</button>
+          <button class="secondary" data-page="settings">設定控制器</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-train">🚆</div>
+        <div class="hero-track"></div>
+        <div class="hero-stats">
+          <div><b>4</b><span>原創主題</span></div>
+          <div><b>🎮</b><span>Gamepad</span></div>
+          <div><b>∞</b><span>無限跑酷</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-games" class="page">
+    <div class="section-head">
+      <div><span class="eyebrow">CHOOSE A WORLD</span><h2>選擇跑酷主題</h2></div>
+      <div id="globalPad" class="status-pill">🎮 未偵測到控制器</div>
+    </div>
+    <div id="gameGrid" class="game-grid"></div>
+  </section>
+
+  <section id="page-settings" class="page">
+    <div class="section-head"><div><span class="eyebrow">CONTROL CENTER</span><h2>控制設定</h2></div></div>
+    <div class="settings-layout">
+      <div class="panel">
+        <h3>⌨️ 鍵盤</h3>
+        <p class="muted">點擊按鍵後，再按下新的鍵。設定會自動保存。</p>
+        <div id="keyBindings"></div>
+        <button id="resetKeys" class="secondary wide">恢復預設</button>
+      </div>
+      <div class="panel">
+        <h3>🎮 Xbox / Gamepad</h3>
+        <p id="padInfo" class="muted">等待控制器連接……</p>
+        <div id="padBindings"></div>
+        <div class="controller-diagram">
+          <div class="stick">L<br><small>← →</small></div>
+          <div class="face"><b>Y</b><b>X</b><b>A</b><b>B</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-about" class="page">
+    <div class="panel about">
+      <span class="eyebrow">ABOUT</span>
+      <h2>Subway Web Arcade</h2>
+      <p>這個專案使用原生 HTML、CSS、JavaScript 與 Canvas 製作，不需要 Node.js 或資料庫即可部署到 GitHub Pages。</p>
+      <h3>控制</h3>
+      <ul>
+        <li>左右：切換軌道</li><li>跳躍：跨越低障礙</li><li>滑行：通過高障礙</li>
+        <li>Esc / Start：暫停</li><li>R：死亡後重新開始</li>
+      </ul>
+      <h3>重要</h3>
+      <p>本專案使用原創的程式化圖形與音效，不包含官方 Subway Surfers 的遊戲檔、角色、貼圖或音樂。主題名稱也可自行修改。</p>
+    </div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <button id="closeModal" class="modal-close">×</button>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <button id="modalOk" class="primary">知道了</button>
+  </div>
+</div>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
